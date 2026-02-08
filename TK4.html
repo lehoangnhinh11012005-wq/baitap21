@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>TK4 - Tab View</title>
+<style>
+    .tab-btn {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        background: #ccc;
+        margin-right: 5px;
+    }
+    .tab-btn.active {
+        background: #4CAF50;
+        color: white;
+    }
+    .tab-content {
+        display: none;
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h2>TK4 – Tab View</h2>
+
+<button class="tab-btn active" onclick="openTab(0)">Tab 1</button>
+<button class="tab-btn" onclick="openTab(1)">Tab 2</button>
+<button class="tab-btn" onclick="openTab(2)">Tab 3</button>
+
+<div class="tab-content" style="display:block;">Nội dung Tab 1</div>
+<div class="tab-content">Nội dung Tab 2</div>
+<div class="tab-content">Nội dung Tab 3</div>
+
+<script>
+function openTab(index) {
+    let tabs = document.querySelectorAll('.tab-content');
+    let btns = document.querySelectorAll('.tab-btn');
+
+    tabs.forEach(tab => tab.style.display = "none");
+    btns.forEach(btn => btn.classList.remove("active"));
+
+    tabs[index].style.display = "block";
+    btns[index].classList.add("active");
+}
+</script>
+
+<br><a href="home.html">⬅ Về trang chủ</a>
+</body>
+</html>

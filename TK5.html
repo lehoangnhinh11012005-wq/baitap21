@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>TK5 - Accordion</title>
+<style>
+    .accordion {
+        background: #4CAF50;
+        color: white;
+        padding: 15px;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        text-align: left;
+    }
+    .panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: #f1f1f1;
+        padding: 0 15px;
+    }
+</style>
+</head>
+<body>
+
+<h2>TK5 – Accordion</h2>
+
+<button class="accordion">Tiêu đề</button>
+<div class="panel">
+    <p>Nội dung accordion được ẩn/hiện.</p>
+</div>
+
+<script>
+document.querySelector(".accordion").onclick = function () {
+    let panel = document.querySelector(".panel");
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+};
+</script>
+
+<br><a href="home.html">⬅ Về trang chủ</a>
+</body>
+</html>

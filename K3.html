@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>K3 - Password Check</title>
+</head>
+<body>
+
+<h2>K3 – Kiểm tra mật khẩu khớp</h2>
+
+<form onsubmit="return checkPassword()">
+    Mật khẩu: <br>
+    <input type="password" id="pass"><br><br>
+
+    Nhập lại mật khẩu: <br>
+    <input type="password" id="repass"><br><br>
+
+    <button type="submit">Đăng ký</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+function checkPassword() {
+    let p1 = document.getElementById("pass").value;
+    let p2 = document.getElementById("repass").value;
+
+    if (p1 !== p2) {
+        document.getElementById("msg").innerHTML = "❌ Mật khẩu không khớp";
+        return false;
+    }
+    alert("✅ Đăng ký thành công");
+    return true;
+}
+</script>
+
+<br><a href="home.html">⬅ Về trang chủ</a>
+</body>
+</html>

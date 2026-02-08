@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>K7 - Parallax</title>
+<style>
+    body, html {
+        margin: 0;
+        height: 200vh;
+    }
+    .parallax {
+        height: 300px;
+        background-image: url("https://picsum.photos/1200/600");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+</head>
+<body>
+
+<div class="parallax"></div>
+<div style="padding:20px">
+    <h2>Hiệu ứng Parallax</h2>
+    <p>Cuộn trang để thấy hiệu ứng.</p>
+</div>
+
+<script>
+window.addEventListener("scroll", function () {
+    let sc = window.pageYOffset;
+    document.querySelector(".parallax").style.backgroundPositionY = sc * 0.5 + "px";
+});
+</script>
+
+<br><a href="home.html">⬅ Về trang chủ</a>
+</body>
+</html>

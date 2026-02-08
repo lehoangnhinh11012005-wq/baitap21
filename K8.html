@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>K8 - BMI</title>
+</head>
+<body>
+
+<h2>K8 – Tính chỉ số BMI</h2>
+
+Cân nặng (kg): <br>
+<input type="number" id="weight"><br><br>
+
+Chiều cao (m): <br>
+<input type="number" step="0.01" id="height"><br><br>
+
+<button onclick="calcBMI()">Tính BMI</button>
+
+<p id="result"></p>
+
+<script>
+function calcBMI() {
+    let w = document.getElementById("weight").value;
+    let h = document.getElementById("height").value;
+    let bmi = w / (h * h);
+    let type = "";
+
+    if (bmi < 18.5) type = "Thiếu cân";
+    else if (bmi < 25) type = "Bình thường";
+    else type = "Thừa cân";
+
+    document.getElementById("result").innerHTML =
+        "BMI = " + bmi.toFixed(2) + " → " + type;
+}
+</script>
+
+<br><a href="home.html">⬅ Về trang chủ</a>
+</body>
+</html>
